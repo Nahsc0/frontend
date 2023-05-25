@@ -48,7 +48,7 @@ jobs:
             sudo ufw allow OpenSSH
             sudo ufw allow 'Nginx Full'
             sudo ufw --force enable 
-
+            
             echo "******************"
             echo "Performing the following actions on client instance"
             echo "*******************"
