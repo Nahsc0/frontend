@@ -1,17 +1,17 @@
-name: Deploy to backend
+name: Deploy to frontend
 on:
   push:
     branches: ['main']
 
 jobs:
-  deploy_to_frontend:
+  deploy_to_backend:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
         uses: actions/Checkout@v2
 
-      - name: SSH to backend to Deploy
+      - name: SSH to frontend to Deploy
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.HOSTNAME }}
@@ -48,7 +48,7 @@ jobs:
             sudo ufw allow OpenSSH
             sudo ufw allow 'Nginx Full'
             sudo ufw --force enable 
-
+            
             echo "******************"
             echo "Performing the following actions on client instance"
             echo "*******************"
